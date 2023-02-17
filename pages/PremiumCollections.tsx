@@ -7,7 +7,7 @@ import DiagnosticCompR2 from '../frontend/components/DiagnosticCompR2';
 import DiagnosticServicesSimpleGrid from '../frontend/components/DiagnosticServicesSimpleGrid';
 import SurgeryServicesCompR1 from '../frontend/components/SurgeryServicesCompR1';
 import SurgeryServicesCompR2 from '../frontend/components/SurgeryServicesCompR2';
-function SurgeryServices() {
+function PremiumCollections() {
     const [value, setValue] = useState(['react']);
     // const { classes } = useStyles();
     useEffect(()=> {
@@ -18,10 +18,10 @@ function SurgeryServices() {
   return (
     <div className="App">
      <Box sx={{  color:'purple', fontSize: 18, lineHeight: 1.4, paddingTop: 100, paddingDown:200, paddingLeft:200, paddingRight:200,}}>
-      <Title order={1}> Surgery Services</Title>
-        
+      <Title order={1}> Premium Collections</Title>
+      <h4>Exclusive </h4>
        
-        <SurgeryServicesCompR1/>
+       
         <SurgeryServicesCompR2/>
         </Box>
         
@@ -30,5 +30,5 @@ function SurgeryServices() {
   );
 }
 
-export default SurgeryServices;
+export default PremiumCollections;
 

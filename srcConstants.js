@@ -1,5 +1,8 @@
 export const debugFlag=1;
-export const legendsOfKrump_CONTRACT_ADDRESS = '0xAf9269c99761441687fA714c69776995F0EE8817';
+
+//0x22Dbb5357c23d8871076D643D2cBc5Fd2133Fa77 - 1 trf
+//0xAf9269c99761441687fA714c69776995F0EE8817 
+export const legendsOfKrump_CONTRACT_ADDRESS = '0xdc2cecf8b4170f38a8c90aa2c7a33ee96bacadba';
   //'0xA9e7A34F06B54aabBDcdF47747eb590c93e400d9';
 export const legendsOfKrump_CONTRACT_ABI =
 [
@@ -234,6 +237,25 @@ export const legendsOfKrump_CONTRACT_ABI =
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isTokenMinted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "",
         "type": "uint256"
       },
@@ -263,6 +285,19 @@ export const legendsOfKrump_CONTRACT_ABI =
       }
     ],
     "name": "mint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "mintByTokenId",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
@@ -442,13 +477,7 @@ export const legendsOfKrump_CONTRACT_ABI =
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_tokenId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "totalNftMinted",
     "outputs": [
       {

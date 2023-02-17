@@ -23,25 +23,29 @@ function SurgeryServicesCompR1() {
     <div className="App">
         <Grid justify="Center">
             <Grid.Col span="auto" styles={{maxWdith: 350}} sm={4} xs={4}>
-                <Card shadow="sm" p="lg" radius="md" withBorder>
+                <Card shadow="sm" p="sm" radius="sm" withBorder>
                     <Card.Section>
                         <Image
                         src= {GridImages[0]}
                         height={250}
+                        
                         alt="Norway"
                         />
                     </Card.Section>
 
                     <Group position="apart" mt="md" mb="xs">
                         <Text weight={500}>{GridHeaders[0]}</Text>
-                        <Badge color="pink" variant="light">
-                        On Sale
+                        <Badge color="teal" variant="dark">
+                        0.02 ETH
+                        </Badge>
+                        <Badge color="pink" variant="dark">
+                        Minted
                         </Badge>
                     </Group>
 
-                    <Text size="sm" color="dimmed">
+                    {/* <Text size="sm" color="dimmed">
                         {GridDesc[0]}
-                    </Text>
+                    </Text> */}
 
                     <Button variant="light" color="blue" fullWidth mt="md" radius="md"
                      onClick={()=> router.push('/SpayAndNeuter')}>
@@ -62,8 +66,8 @@ function SurgeryServicesCompR1() {
 
                     <Group position="apart" mt="md" mb="xs">
                         <Text weight={500}>{GridHeaders[1]}</Text>
-                        <Badge color="pink" variant="light">
-                        On Sale
+                        <Badge color="teal" variant="light">
+                       0.02 eth
                         </Badge>
                     </Group>
 

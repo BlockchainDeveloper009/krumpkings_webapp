@@ -30,11 +30,27 @@ for (const events of res.transfers) {
   } else {
     for (const erc1155 of events.erc1155Metadata) {
       console.log(
-        "ERC-1155 Token Minted: ID- ",
+        "ERC-1155 metaToken Minted: ID- ",
         erc1155.tokenId,
         " Contract- ",
         events.rawContract.address
       );
     }
+
+    for (const erc1155 of events.erc1155Metadata) {
+      console.log('-------')
+      console.log(
+        erc1155
+      );
+      console.log('------->>>>>')
+
+
+      
+
+    }
   }
+
+  console.log('======')
+console.log(events)
+  console.log('======')
 }

@@ -50,7 +50,7 @@ function AdSellerCarousel() {
     <Card shadow="sm" p="lg" radius="md" withBorder>
                     <Card.Section>
                         <Image
-                        src= {AdsSellerImages[1]}
+                        src= 'https://youtu.be/JxNqMDixFZo'
                         height={imgHeight}
                         fit="contain"
                         alt="Norway"

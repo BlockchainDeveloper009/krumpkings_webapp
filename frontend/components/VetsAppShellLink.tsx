@@ -52,7 +52,9 @@ import {
 // import WagmiWillsFormEdit from './WillsFormEdit';
 // import WillsFormEdit from './WillsFormEdit';
 
-const Applicationfooter = "2022 all copyright resverved to Inherit Blocks"
+
+const OrganizationName = "Krump Kings"
+const Applicationfooter = `2022 all copyright resverved to ${OrganizationName}`
 function mint(){}
 function AppShellLinkExample() {
   const theme = useMantineTheme();
@@ -71,27 +73,27 @@ function AppShellLinkExample() {
       asideOffsetBreakpoint="sm"
       navbar={
         <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg:175  }}>
-          <Title order={3}>Our Services</Title>
+          <Title order={3} align="center">Krump NFT's</Title>
           <Navbar.Section grow component={ScrollArea} mx="-xs" px="xs">
         {/* scrollable content here */}
             <div style={{display: "flex", flexDirection: "column", padding:15 }}>
            
-                   <Link href="/PrimaryCare"  style={{padding:5 }} >
+                   <Link href="/LegendsOfKrump"  style={{padding:5 }} >
                       Legends of Krump
                     </Link>
                    
             
-                    <Link href="/SurgeryServices"  style={{padding:5 }} >
+                    <Link href="/PremiumCollections"  style={{padding:5 }} >
                     Premium Collections
                     </Link>
-                    <Link href="/TravelCertificates"  style={{padding:5 }} >
-                    Krump Movie 
+                    <Link href="/KrumpMovies"  style={{padding:5 }} >
+                    Krump Movies 
                     </Link>
-                    <Link href="/HospitalityServices"  style={{padding:5 }} >
+                    <Link href="/Krumptionary"  style={{padding:5 }} >
                    Krumptionary
                     </Link>
 
-                    <Link href="/HospitalityServices"  style={{padding:5 }} >
+                    <Link href="/RealityTv"  style={{padding:5 }} >
                    Reality Tv
                     </Link>
                 </div>    
@@ -99,7 +101,7 @@ function AppShellLinkExample() {
                 <div style={{display: "flex", flexDirection: "column", padding:15 }}>
                
                     <Link href="/MyCollections" style={{padding:5 }} >
-                    MyCollections
+                    My Collections
                     </Link>
               
     
@@ -107,12 +109,7 @@ function AppShellLinkExample() {
                      <Link href="/ViewAllCollections">
                       View All Collection
                     </Link>
-                    <Anchor component="button" type="button">
-                      Anchor as button
-                    </Anchor>
-                    <Anchor href="https://mantine.dev/" target="_blank">
-                      Mantine docs
-                    </Anchor>
+                    
               </div>
 
           </Navbar.Section>
@@ -144,7 +141,7 @@ function AppShellLinkExample() {
           
             <SimpleGrid cols={7} sx={{ color: 'red', fontSize: 18, lineHeight: 1.4, padding:5 }}>
             
-          <div><Text><Link href="/" >Amigos Vets</Link></Text></div>
+          <div><Text><Link href="/" >{OrganizationName}</Link></Text></div>
           <div><Text><Link href="/AboutUs">AboutUs</Link></Text></div>
           <div><Text><Link href="/Team">Our Team</Link></Text></div>
           <div><Text><Link href="/ContactUs">ContactUs</Link></Text></div>
@@ -159,8 +156,9 @@ function AppShellLinkExample() {
             onClick={()=> mint()}>testMintS</button>
           )} */}
 
-<ConnectButton/>
+
         </SimpleGrid>
+        <div><Box ><ConnectButton/></Box></div>
         </div>
         </Header>
 
@@ -168,7 +166,7 @@ function AppShellLinkExample() {
       }
       // header = {DoubleHeaderColored()}
     
-    >
+    padding ={15}>
       {/* <Box>
       <Flex> <Cards></Cards></Flex>
       </Box> */}

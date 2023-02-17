@@ -4,7 +4,7 @@ import Cards from '../frontend/components/Cards';
 import ChipsExample from '../frontend/components/ChipsExample';
 import PrimaryCareComp from '../frontend/components/PrimaryCareComp';
 const PageHeader="Legends of Krump";
-function PrimaryCare() {
+function LegendsOfKrump() {
     const [value, setValue] = useState(['react']);
     // const { classes } = useStyles();
     useEffect(()=> {
@@ -24,5 +24,5 @@ function PrimaryCare() {
   );
 }
 
-export default PrimaryCare;
+export default LegendsOfKrump;
 

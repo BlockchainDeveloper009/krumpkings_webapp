@@ -2,7 +2,7 @@ import { Chip, createStyles } from '@mantine/core';
 import { useEffect, useState } from "react";
 import Cards from '../frontend/components/Cards';
 import ChipsExample from '../frontend/components/ChipsExample';
-function PetBoarding() {
+function KrumpMovies() {
     const [value, setValue] = useState(['react']);
     // const { classes } = useStyles();
     useEffect(()=> {
@@ -22,5 +22,5 @@ function PetBoarding() {
   );
 }
 
-export default PetBoarding;
+export default KrumpMovies;
 

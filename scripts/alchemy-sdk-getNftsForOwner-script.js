@@ -1,6 +1,21 @@
 // This script demonstrates access to the NFT API via the Alchemy SDK.
 import { Network, Alchemy } from "alchemy-sdk";
+class NftData {
 
+  constructor(title, imageUrl,description,price,tokenId,name,attributes,balance,timelastUpdate,error) {
+    this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
+    this.tokenId = tokenId;
+    this.name = name;
+    this.attributes = attributes;
+    this.balance = balance;
+    this.timelastUpdate = timelastUpdate;
+    this.error = error;
+  
+  }
+}
 // Optional Config object, but defaults to demo api-key and eth-mainnet.
 const settings = {
   apiKey: "3b2s_ycI-VRJbbV-stREOv_x1w3XC5LQ", // Replace with your Alchemy API Key.
@@ -39,15 +54,48 @@ console.group(nftsForOwner2)
 console.log("...");
 
 // Print contract address and tokenId for each NFT:
+let returnArr=[];
 for (const nft of nftsForOwner2.ownedNfts) {
   console.log("===");
   console.log("contract address:", nft.contract.address);
   console.log("token ID:", nft.tokenId);
   console.log(nft.rawMetadata.attributes)
-  console.log('kkkkkkkk')
-  console.log(nft)
-  console.log('llllllllll')
+   console.log(nft.rawMetadata.image)
+   console.log(nft.rawMetadata.media)
+   console.log(nft.media)
+   let t = nftsForOwner2[0]
+   console.log('hunt for image')
+   console.log(t)
+   console.log('close hunt')
+  returnArr.push(new NftData(nft.title,
+    nft.rawMetadata.image,
+    nft.description,
+    '0.02',
+    nft.tokenId,
+    nft.rawMetadata.name,
+    nft.attributes,
+    nft.balance,
+    nft.timeLastUpdated,
+    nft.metadataError))
+
+   console.log('---------------------------------------------------------------------------------')
+   console.log(nft)
+   console.log('nft overrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr')
+  if(nft.tokenId==0 && nft.contract.address == 0xaf9269c99761441687fa714c69776995f0ee8817){
+   
+    console.log("km------------------------------------->token ID:", nft.tokenId);
+    const { k,m} = nft.rawMetadata;
+    console.log(k)
+    console.log(m)
+    console.log('kkkkkkkk')
+    console.log(nft)
+    console.log('llllllllll')
+  }
+ 
+ 
 }
+console.log('all array')
+console.log(returnArr)
 console.log("===");
 //wallet1: 0x1d44eeda66cfdd27189373d8b6d12ef9f549f3d5
 //wallet2: 0xf821142CC270dAb63767cFAae15dC36D1b043348
@@ -64,7 +112,7 @@ const response = await alchemy.nft.getNftMetadata(
 // Print some commonly used fields:
 console.log("NFT name: ", response.title);
 console.log("token type: ", response.tokenType);
-console.log("tokenUri: ", response.tokenUri.gateway);
+// console.log("tokenUri: ", response.tokenUri.gateway);
 console.log("image url: ", response.rawMetadata.image);
 console.log("time last updated: ", response.timeLastUpdated);
 console.log("===");

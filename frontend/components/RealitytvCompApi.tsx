@@ -4,7 +4,9 @@ import { Grid, Card, Image, Badge, Group } from '@mantine/core';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { IpfsImage } from 'react-ipfs-image';
-
+import {useNftDataGetterByAddressGet} from '../Hooks/getLegendsOfKrump.js';
+//
+import {useNftDataGetterByAddressGetApi} from '../Hooks/getLegendsOfKrumpApi.js';
 //import { createStylesServer, ServerStyles } from '@mantine/ssr';
 const GridHeaders= ['Orthopedic Surgery','Laparoscopic Surgery']
 const GridDesc= [
@@ -56,49 +58,61 @@ const GridImages= [
       ];
 
 const imgHeight = 250
-function SurgeryServicesCompR2() {
-    const router = useRouter();
-    let i=0;
-    const features = mockdata.filter((m)=>{ return m.error==undefined}).map((m)=>
+function RealitytvCompApi() {
+  const callAPI = async () => {
+		try {
+			const res = await fetch(
+				`https://jsonplaceholder.typicode.com/posts/1`
+			);
+			const data = await res.json();
+			console.log(data);
+		} catch (err) {
+			console.log(err);
+		}
+	};
+  
+    let ownerAddr= '0x1d44EEDa66CFdD27189373d8B6d12eF9f549F3D5'
+    let nftdatas =useNftDataGetterByAddressGet(ownerAddr);
+    // const features = nftdatas?.filter((m:any)=>{ return m.error==undefined}).map((m:any)=>
         
-        (
+    //     (
                 
-            <Grid.Col span="auto" styles={{maxWdith: 150}} sm={3.5} xs={5} >
-                <Card shadow="sm" p="lg" radius="md" withBorder >
-                    <Card.Section>
-                        <Image
-                        src= {m.imageUrl}
-                        // height={imgHeight}
-                        alt="Norway"
-                        />
-                        {/* <IpfsImage hash='https://gateway.pinata.cloud/ipfs/QmZqF4PxcvtobxCGQfhd9iJp4pujAmUiNQGA8hqTzew7jD/Set-16-(8).jpg'  height={imgHeight} alt='not'></IpfsImage> */}
-                    </Card.Section>
+    //         <Grid.Col span="auto" styles={{maxWdith: 150}} sm={3.5} xs={5} >
+    //             <Card shadow="sm" p="lg" radius="md" withBorder >
+    //                 <Card.Section>
+    //                     <Image
+    //                     src= {m.imageUrl}
+    //                     // height={imgHeight}
+    //                     alt="Norway"
+    //                     />
+    //                     {/* <IpfsImage hash='https://gateway.pinata.cloud/ipfs/QmZqF4PxcvtobxCGQfhd9iJp4pujAmUiNQGA8hqTzew7jD/Set-16-(8).jpg'  height={imgHeight} alt='not'></IpfsImage> */}
+    //                 </Card.Section>
 
-                    <Group position="apart" mt="md" mb="xs">
-                        <Text weight={500}>{m.title}</Text>
+    //                 <Group position="apart" mt="md" mb="xs">
+    //                     <Text weight={500}>{m.title}</Text>
                  
-                        <Badge color="red" variant="dark">
+    //                     <Badge color="red" variant="dark">
                         
-                        0.02 ETH
-                        </Badge>
-                    </Group>
+    //                     0.02 ETH
+    //                     </Badge>
+    //                 </Group>
 
-                    <Text size="sm" color="dimmed">
-                        {m.description}
-                    </Text>
+    //                 <Text size="sm" color="dimmed">
+    //                     {m.description}
+    //                 </Text>
 
-                    <Button variant="light" color="blue" fullWidth mt="md" radius="md"
-                     onClick={()=> router.push('/LaparoscopicSurgery')}>
-                        Buy
-                    </Button>
-                </Card>
+    //                 <Button variant="light" color="blue" fullWidth mt="md" radius="md"
+    //                  onClick={()=> router.push('/LaparoscopicSurgery')}>
+    //                     Buy
+    //                 </Button>
+    //             </Card>
 
-            </Grid.Col>
-        ));
+    //         </Grid.Col>
+    //     ));
   return (
     <div className="App">
         <Grid justify="Center" >
-        {features}
+        {/* {features} */}
            
             
            
@@ -108,4 +122,4 @@ function SurgeryServicesCompR2() {
   );
 } 
 
-export default SurgeryServicesCompR2;
+export default RealitytvCompApi;

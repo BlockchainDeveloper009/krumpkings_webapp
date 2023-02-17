@@ -1,7 +1,7 @@
 import { Box, Chip, createStyles, Spoiler } from '@mantine/core';
 import { useEffect, useState } from "react";
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
+import Cards from '../../frontend/components/Cards';
+import ChipsExample from '../../frontend/components/ChipsExample';
 function AboutUs() {
     const [value, setValue] = useState(['react']);
     // const { classes } = useStyles();

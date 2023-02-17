@@ -26,7 +26,7 @@ import { ConnectButton, getDefaultWallets,
 import config from '../contractConfig.json';
 import { useEffect, useState } from 'react';
 import { IpfsImage } from 'react-ipfs-image';
-
+import { BrowserRouter } from 'react-router-dom';
 const yourAlchemyApiKey = '3b2s_ycI-VRJbbV-stREOv_x1w3XC5LQ';
 const contractConfig: UseContractConfig = {
   address: config.address,
@@ -96,12 +96,13 @@ export default function App(props: AppProps) {
        
         theme={{
           /** Put your mantine theme override here */
-          colorScheme: 'light',
+          colorScheme: 'dark',
           fontFamily: 'Open Sans, sans-serif,Georgia serif',
-          
+          focusRing: 'auto' 
 
         }}
       >
+        {/* <BrowserRouter> */}
         <WagmiConfig client={client}>
           <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
         <Component {...pageProps} />
@@ -110,6 +111,7 @@ export default function App(props: AppProps) {
         <p>You will have to pay </p>
         </RainbowKitProvider>
         </WagmiConfig>
+        {/* </BrowserRouter> */}
       </MantineProvider>
     </>
   );
