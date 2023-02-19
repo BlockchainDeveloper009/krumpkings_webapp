@@ -1,5 +1,5 @@
 export const debugFlag=1;
-
+export const legendsOfKrump_ownerAddress = '0x1d44EEDa66CFdD27189373d8B6d12eF9f549F3D5'
 //0x22Dbb5357c23d8871076D643D2cBc5Fd2133Fa77 - 1 trf
 //0xAf9269c99761441687fA714c69776995F0EE8817 
 export const legendsOfKrump_CONTRACT_ADDRESS = '0xdc2cecf8b4170f38a8c90aa2c7a33ee96bacadba';

@@ -1,7 +1,6 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
+
 import PrimaryCareComp from '../frontend/components/PrimaryCareComp';
 const PageHeader="Legends of Krump";
 function LegendsOfKrump() {

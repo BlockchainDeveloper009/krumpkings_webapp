@@ -1,11 +1,7 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
-import DiagnosticCompR1 from '../frontend/components/DiagnosticCompR1';
-import DiagnosticCompR2 from '../frontend/components/DiagnosticCompR2';
-import DiagnosticServicesSimpleGrid from '../frontend/components/DiagnosticServicesSimpleGrid';
-import SurgeryServicesCompR1 from '../frontend/components/SurgeryServicesCompR1';
+
+
 import SurgeryServicesCompR2 from '../frontend/components/SurgeryServicesCompR2';
 function PremiumCollections() {
     const [value, setValue] = useState(['react']);

@@ -1,13 +1,11 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
-import DiagnosticCompR1 from '../frontend/components/DiagnosticCompR1';
-import DiagnosticCompR2 from '../frontend/components/DiagnosticCompR2';
-import {useNftDataGetterByAddressGet} from '../frontend/Hooks/getLegendsOfKrump.js';
+
+import {useNftDataGetterByAddressGet, Nft1Data} from '../frontend/Hooks/getLegendsOfKrump.js';
 import RealitytvComp from '../frontend/components/RealitytvComp';
 import RealitytvCompApi from '../frontend/components/RealitytvCompApi';
 import { BrowserRouter } from 'react-router-dom';
+
 let pageHeader = 'Krump Reality Tv Show'
 function RealityTv() {
     const [value, setValue] = useState(['react']);
@@ -29,7 +27,7 @@ function RealityTv() {
         <h4>Coming Soon</h4>
         {/* <DiagnosticServicesSimpleGrid/> */}
         <RealitytvComp/>
-        <RealitytvCompApi/>
+        {/* <RealitytvCompApi/> */}
       </Box> 
         
         {/* <Cards></Cards> */}

@@ -83,7 +83,7 @@ console.log('result'+result)
     return NftData;
 }
 
-class Nft1Data {
+export class Nft1Data {
 
   constructor(title, imageUrl,description,price,tokenId,name,attributes,balance,timelastUpdate,error) {
     this.title = title;

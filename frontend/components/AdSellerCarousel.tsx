@@ -14,9 +14,10 @@ const GridDesc= [
    
 ]
 const AdsSellerImages= [ 
-    "/images/Home3.PNG", 
-    "/images/gogleReviews.PNG", 
-    "/images/Home2.PNG",,
+    "/images/Set-82-(Krumptionary)-3.jpg", 
+    "/images/Set-82-(Krumptionary)-4.jpg", 
+    "/images/Set-185-(The-Golden-Series)-44h.jpg",
+    "/images/Set-7-(Unmovable-Cover-5).jpg",
     ]
 const imgHeight = 650
 function AdSellerCarousel() {

@@ -26,8 +26,14 @@ import { ConnectButton, getDefaultWallets,
 import config from '../contractConfig.json';
 import { useEffect, useState } from 'react';
 import { IpfsImage } from 'react-ipfs-image';
-import { BrowserRouter } from 'react-router-dom';
-const yourAlchemyApiKey = '3b2s_ycI-VRJbbV-stREOv_x1w3XC5LQ';
+
+
+
+// require("dotenv")
+
+
+const yourAlchemyApiKey:string = process.env.yourAlchemyApiKey ? process.env.yourAlchemyApiKey : '';
+
 const contractConfig: UseContractConfig = {
   address: config.address,
   abi: [],
@@ -69,7 +75,7 @@ export default function App(props: AppProps) {
   //   // functionName: 'baseTokenURI',
 
   // });
-  let tokenURI=0;
+  let tokenURI='0';
   useEffect(() => {
     
     (async () => { 
@@ -98,7 +104,8 @@ export default function App(props: AppProps) {
           /** Put your mantine theme override here */
           colorScheme: 'dark',
           fontFamily: 'Open Sans, sans-serif,Georgia serif',
-          focusRing: 'auto' 
+          focusRing: 'auto' ,
+          loader: 'bars'
 
         }}
       >

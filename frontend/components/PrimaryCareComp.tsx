@@ -13,7 +13,7 @@ import {useNftDataGetterByAddressGet} from '../Hooks/getLegendsOfKrump.js';
 function PrimaryCareComp(props:any) {
     const router = useRouter();
     const viewport = useRef<HTMLDivElement>(null);
-    const scrollToTop = () => viewport.current.scrollTo({ top: 0, behavior: 'smooth' });
+    
     let _tokenId=6; //workingS
     let mintCost = ethers.utils.parseEther('0.02');
    let mintCostinWei = ethers.utils.formatEther(2000000000000000).toString();

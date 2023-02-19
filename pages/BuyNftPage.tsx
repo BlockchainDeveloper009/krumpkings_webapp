@@ -1,16 +1,13 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
-import { useLocation } from 'react-router-dom';
+
 import { useAccount } from 'wagmi';
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
-import DiagnosticCompR1 from '../frontend/components/DiagnosticCompR1';
-import DiagnosticCompR2 from '../frontend/components/DiagnosticCompR2';
+
 import DiagnosticServicesSimpleGrid from '../frontend/components/DiagnosticServicesSimpleGrid';
 import TravelCertificatesCompR1 from '../frontend/components/TravelCertificatesCompR1';
 
 import { useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
-import {legendsOfKrump_CONTRACT_ADDRESS,legendsOfKrump_CONTRACT_ABI} from '../srcConstants.js';
+import {legendsOfKrump_CONTRACT_ADDRESS,legendsOfKrump_CONTRACT_ABI, legendsOfKrump_ownerAddress} from '../srcConstants.js';
 import { ethers} from 'ethers';
 import { useRouter } from "next/router";
 let pageHeader = 'Krump Movies'
@@ -21,12 +18,14 @@ function BuyNftPage() {
     const {
       query: {   _tokenId,
         fromaddr,
-        toaddr},
+        toaddr,
+        token},
     } = router
     const props = {
       _tokenId,
       fromaddr,
-      toaddr
+      toaddr,
+      token
     }
     
 
@@ -36,6 +35,7 @@ function BuyNftPage() {
   console.log(`address: ${address}`)
   console.log(`tokenId: ${props._tokenId}`)
   console.log(`fromaddr: ${props.fromaddr}`)
+  console.log(`tokenId = ${token}`)
     // const { classes } = useStyles();
     useEffect(()=> {
         console.log(props._tokenId)
@@ -60,11 +60,11 @@ function BuyNftPage() {
       config,
       error: prepareError,
       isError: isPrepareError, }  = usePrepareContractWrite({
-      address: `0xAf9269c99761441687fA714c69776995F0EE8817`,
+      address: legendsOfKrump_CONTRACT_ADDRESS,
       abi: legendsOfKrump_CONTRACT_ABI,
       functionName: 'safeTransferFrom',
       
-      args: ['0x1d44EEDa66CFdD27189373d8B6d12eF9f549F3D5', 
+      args: [legendsOfKrump_ownerAddress, 
       address?.toString(),
       props._tokenId, 1 , '0x'],
       // args: [props.fromaddr, address,props._tokenId, 1 , '0x00'],
@@ -116,7 +116,7 @@ function BuyNftPage() {
         '{txnErr.toString()}' - error flag
       </Box> 
         
-        {/* <Cards></Cards> */}
+        
     </div>
   );
 }

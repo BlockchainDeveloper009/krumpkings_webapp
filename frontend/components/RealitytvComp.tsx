@@ -5,11 +5,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { IpfsImage } from 'react-ipfs-image';
-import {useNftDataGetterByAddressGet} from '../Hooks/getLegendsOfKrump.js';
+import {Nft1Data, useNftDataGetterByAddressGet} from '../Hooks/getLegendsOfKrump.js';
+import {legendsOfKrump_ownerAddress} from '../../srcConstants.js';
 //
 import { ethers} from 'ethers';
 
 import {useNftDataGetterByAddressGetApi} from '../Hooks/getLegendsOfKrumpApi.js';
+import { useAccount } from 'wagmi';
 
 //import { createStylesServer, ServerStyles } from '@mantine/ssr';
 
@@ -17,17 +19,17 @@ const imgHeight = 250
 function RealitytvComp() {
     const router = useRouter();
     let i=0;
-    let ownerAddr= '0x1d44EEDa66CFdD27189373d8B6d12eF9f549F3D5'
+    let ownerAddr= legendsOfKrump_ownerAddress
     let nftdatas =useNftDataGetterByAddressGet(ownerAddr);
     console.log(nftdatas)
     console.log('nftsdatas--')
     const t: any = nftdatas.data
-    console.log(t.filter((t1:any)=> { return t1}))
+    console.log(t.filter((t1:any)=> { return t1.imageUrl!=undefined}))
     console.log('-------')
 
     // buy porocess
     //----------------------
-    let _tokenId=6; //workingS
+   //workingS
     let fromaddr='0x1d44EEDa66CFdD27189373d8B6d12eF9f549F3D5' //owner
     let toaddr='' //connected account
     let mintCost = ethers.utils.parseEther('0.02');
@@ -37,33 +39,40 @@ function RealitytvComp() {
     
       const [MintLoading,setMintLoading] = useState(false);
       const [mintSuccess, setMintSuccess] = useState(false);
-      const [tokenid, setTokenId] = useState('');
-     
-        
-            function sendProps () {
+      const [loctokenId, setLocTokenId] = useState('');
+      const [dataarr,setDataArr] = useState([])
+      const { address, connector, isConnected } = useAccount()
+            function sendProps (m:Nft1Data) {
+               
+                let _tokenId = m.tokenId;
+                console.log(`m.tokenId -- ${m.tokenId}`)
+                console.log(`loc - ${loctokenId}`)
               router.push({
                 pathname: "/BuyNftPage",
                 query: {
                     _tokenId,
                     fromaddr,
                     toaddr,
-
+                    MintLoading,
+                    _tokenId,
                 },
               });
             };
 
     //-------
-    const features = nftdatas.data?.filter((m:any)=>{ return m.description == 'Battle for existence'}).map((m:any)=>
+    let a:any=[]
+    const features = nftdatas.data?.filter((m:any)=>
+    { return m.description == 'Battle for existence'}).map((m:any)=>
         
         (
-                
+            
             <Grid.Col span="auto" styles={{maxWdith: 150}} sm={3.5} xs={5} >
                 <Card shadow="sm" p="lg" radius="md" withBorder >
                     <Card.Section>
                         <Image
                         src= {m.imageUrl}
                         // height={imgHeight}
-                        alt="Norway"
+                        alt="img not found"
                         />
                         {/* <IpfsImage hash='https://gateway.pinata.cloud/ipfs/QmZqF4PxcvtobxCGQfhd9iJp4pujAmUiNQGA8hqTzew7jD/Set-16-(8).jpg'  height={imgHeight} alt='not'></IpfsImage> */}
                     </Card.Section>
@@ -81,8 +90,8 @@ function RealitytvComp() {
                         {m.description}
                     </Text>
 
-                    <Button variant="light" color="blue" fullWidth mt="md" radius="md"
-                     onClick={()=>sendProps()}>
+                    <Button disabled= {!isConnected} variant="light" color="blue" fullWidth mt="md" radius="md"
+                     onClick={()=>sendProps(m)}>
                         Buy
                     </Button>
                 </Card>
