@@ -2,7 +2,7 @@ import { Box, Button, Chip, Container, createStyles, Title } from '@mantine/core
 import { useEffect, useState } from "react";
 
 
-import HospitalityServicesComp1 from '../frontend//components/HospitalityServicesComp1';
+import HospitalityServicesComp1 from '../../frontend//components/HospitalityServicesComp1';
 import styles from '../styles/Home.module.css' 
 const thisPageHeader= 'Day Care';
 const titleSize= 2;

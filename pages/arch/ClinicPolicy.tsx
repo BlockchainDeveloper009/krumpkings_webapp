@@ -1,6 +1,6 @@
 import { Chip, createStyles } from '@mantine/core';
 import { useEffect, useState } from "react";
-import ChipsExample from '../frontend/components/ChipsExample';
+
 function ClinicPolicy() {
 
 

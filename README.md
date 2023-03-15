@@ -82,3 +82,8 @@ Highlight a few words using Mark tag
 Footer
 
 add google review link to application side bar
+
+//https://www.tutorialspoint.com/nextjs/nextjs_deployment.htm
+
+yarn run build
+yarn run start

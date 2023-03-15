@@ -10,7 +10,7 @@ import {  createClient, configureChains, WagmiConfig, useAccount, useConnect, us
 //import { createStylesServer, ServerStyles } from '@mantine/ssr';
 import {useNftDataGetterByAddressGet} from '../Hooks/getLegendsOfKrump.js';
 
-function PrimaryCareComp(props:any) {
+function LegendsOfKrumpComp(props:any) {
     const router = useRouter();
     const viewport = useRef<HTMLDivElement>(null);
     
@@ -45,6 +45,7 @@ function PrimaryCareComp(props:any) {
       const [mintSuccess, setMintSuccess] = useState(false);
       async function  onMintClick(){
             try{
+                console.log('minting clicked');
             const tx = await writeAsync?.();
          const res = await tx?.wait();
          setMintSuccess(true);
@@ -106,4 +107,4 @@ function PrimaryCareComp(props:any) {
   );
 } 
 
-export default PrimaryCareComp;
+export default LegendsOfKrumpComp;

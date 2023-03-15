@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@crossmint/client-sdk-react-ui": "^0.2.2-alpha.1",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@mantine/carousel": "^5.10.0",

@@ -2,7 +2,7 @@ import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
 
 
-import HospitalityServicesComp1 from '../frontend/components/HospitalityServicesComp1';
+import HospitalityServicesComp1 from '../../frontend/components/HospitalityServicesComp1';
 const thisPageHeader= 'Soft Tissue Surgery';
 function SoftTissueSurgery() {
     const [value, setValue] = useState(['react']);

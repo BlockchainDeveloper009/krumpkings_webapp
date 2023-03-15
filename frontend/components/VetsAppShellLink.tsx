@@ -77,7 +77,16 @@ function AppShellLinkExample() {
           <Navbar.Section grow component={ScrollArea} mx="-xs" px="xs">
         {/* scrollable content here */}
             <div style={{display: "flex", flexDirection: "column", padding:15 }}>
-           
+                    <Link href="/"  style={{padding:5 }} >
+                      Home
+                    </Link>
+                    <Link href="/ClaimNft"  style={{padding:5 }} >
+                      Claim Nft
+                    </Link>
+                    <Link href="/WhiteListUsers"  style={{padding:5 }} >
+                   WhiteList
+                    </Link>
+
                    <Link href="/LegendsOfKrump"  style={{padding:5 }} >
                       Legends of Krump
                     </Link>
@@ -93,6 +102,7 @@ function AppShellLinkExample() {
                    Krumptionary
                     </Link>
 
+                  
                     <Link href="/RealityTv"  style={{padding:5 }} >
                    Reality Tv
                     </Link>
@@ -139,9 +149,9 @@ function AppShellLinkExample() {
 
            
           
-            <SimpleGrid cols={7} sx={{ color: 'red', fontSize: 18, lineHeight: 1.4, padding:5 }}>
+          <SimpleGrid cols={7} sx={{ color: 'red', fontSize: 18, lineHeight: 1.4, padding:5 }}>
             
-          <div><Text><Link href="/" >{OrganizationName}</Link></Text></div>
+          <div><Text><Link href="/Home" >{OrganizationName}</Link></Text></div>
           <div><Text><Link href="/AboutUs">AboutUs</Link></Text></div>
           <div><Text><Link href="/Team">Our Team</Link></Text></div>
           <div><Text><Link href="/ContactUs">ContactUs</Link></Text></div>

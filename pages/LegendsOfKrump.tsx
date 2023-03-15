@@ -1,7 +1,7 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
 
-import PrimaryCareComp from '../frontend/components/PrimaryCareComp';
+import LegendsOfKrumpComp from '../frontend/components/LegendsOfKrumpComp';
 const PageHeader="Legends of Krump";
 function LegendsOfKrump() {
     const [value, setValue] = useState(['react']);
@@ -17,7 +17,7 @@ function LegendsOfKrump() {
       
       <Title order={1}> {PageHeader}</Title>
       
-       <PrimaryCareComp />
+       <LegendsOfKrumpComp />
        </Box>
     </div>
   );

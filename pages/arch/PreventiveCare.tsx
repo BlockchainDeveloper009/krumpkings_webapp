@@ -1,8 +1,8 @@
 import { Box, Chip, createStyles, Title } from '@mantine/core';
 import { useEffect, useState } from "react";
-import Cards from '../frontend/components/Cards';
-import ChipsExample from '../frontend/components/ChipsExample';
-import PreventiveCareComp from '../frontend/components/PreventiveCareComp';
+import Cards from '../../frontend/components/Cards';
+import ChipsExample from '../../frontend/components/ChipsExample';
+import PreventiveCareComp from '../../frontend/components/PreventiveCareComp';
 const thisPageHeader= ' Preventive Care';
 function PreventiveCare() {
     const [value, setValue] = useState(['react']);

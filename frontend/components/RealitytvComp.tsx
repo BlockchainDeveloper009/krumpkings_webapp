@@ -53,8 +53,8 @@ function RealitytvComp() {
                     _tokenId,
                     fromaddr,
                     toaddr,
-                    MintLoading,
-                    _tokenId,
+                    MintLoading
+                    
                 },
               });
             };

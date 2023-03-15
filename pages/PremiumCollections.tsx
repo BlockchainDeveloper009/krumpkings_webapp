@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 
 import SurgeryServicesCompR2 from '../frontend/components/SurgeryServicesCompR2';
+import AddMintingUsingCrossMintButton from '../frontend/components/AddMintingUsingCrossMintButton';
+
 function PremiumCollections() {
     const [value, setValue] = useState(['react']);
     // const { classes } = useStyles();
@@ -19,6 +21,7 @@ function PremiumCollections() {
        
        
         <SurgeryServicesCompR2/>
+        <AddMintingUsingCrossMintButton/>
         </Box>
         
         

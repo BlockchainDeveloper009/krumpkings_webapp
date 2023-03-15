@@ -68,13 +68,7 @@ export default function App(props: AppProps) {
   const [imageHash, setImageHash] = useState('')
   const { Component, pageProps } = props;
   const { isConnected } = useAccount();
-  // const { data: tokenURI } = useContractRead({
-  //   address: '0x',
-  //    abi: [],
-    
-  //   // functionName: 'baseTokenURI',
 
-  // });
   let tokenURI='0';
   useEffect(() => {
     
@@ -91,10 +85,7 @@ export default function App(props: AppProps) {
   
   return (
     <>
-      <Head>
-        <title>KrumpKings Nft Marketplace</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-      </Head>
+   
 
       <MantineProvider
         withGlobalStyles
@@ -110,6 +101,10 @@ export default function App(props: AppProps) {
         }}
       >
         {/* <BrowserRouter> */}
+        <Head>
+        <title>KrumpKings Nft Marketplace</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+      </Head>
         <WagmiConfig client={client}>
           <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
         <Component {...pageProps} />
