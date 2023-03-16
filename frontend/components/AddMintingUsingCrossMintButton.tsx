@@ -31,7 +31,25 @@ function AddMintingUsingCrossMintButton() {
       />
       <button onClick={handleIncrement}> + </button>
 
-      <CrossmintPayButton
+      {/* <CrossmintPayButton
+        clientId={clientId}
+        environment={environment}
+        mintConfig={{
+        _tokenId: tokenId,
+        _operator: operator,
+        quantity: quantity, // the `_quantity` property should match what is in your mint function
+        totalPrice: (nftCost * mintAmount).toString(),
+
+        
+        }}
+      /> */}
+    </div>
+  );
+}
+
+export default AddMintingUsingCrossMintButton;
+
+{/* <CrossmintPayButton
         clientId={clientId}
         environment={environment}
         mintConfig={{
@@ -45,10 +63,4 @@ function AddMintingUsingCrossMintButton() {
           //quantity: "1" // the `_quantity` property should match what is in your mint function
           // your custom minting arguments...
         }}
-      />
-    </div>
-  );
-}
-
-export default AddMintingUsingCrossMintButton;
-
+      /> */}

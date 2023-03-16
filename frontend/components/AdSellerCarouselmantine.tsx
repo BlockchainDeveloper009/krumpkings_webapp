@@ -126,7 +126,7 @@ function AdSellerCarouselmantine() {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const slides = data.map((item) => (
     <Carousel.Slide key={item.title}>
-      <Car1 {...item} />
+      {/* <Car1 {...item} /> */}
     </Carousel.Slide>
   ));
 
