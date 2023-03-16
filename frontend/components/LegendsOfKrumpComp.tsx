@@ -19,14 +19,14 @@ function LegendsOfKrumpComp(props:any) {
    let mintCostinWei = ethers.utils.formatEther(2000000000000000).toString();
     // let mintCostinWei = ethers.utils.formatEther(0.02);
     console.log('-->'+legendsOfKrump_CONTRACT_ADDRESS)
-    console.log(legendsOfKrump_CONTRACT_ABI)
+  
     const { 
         config,
         error: prepareError,
         isError: isPrepareError, }  = usePrepareContractWrite({
         address: legendsOfKrump_CONTRACT_ADDRESS,
         abi: legendsOfKrump_CONTRACT_ABI,
-        functionName: 'mint',
+        functionName: 'mintByTokenId',
         args: [_tokenId, {value: mintCost?.toString()}],
         // enabled: Boolean(assetId),
         // overrides: {
@@ -36,7 +36,10 @@ function LegendsOfKrumpComp(props:any) {
       });
       const { data, write , error, isError, writeAsync, isLoading: mintLoading, } = useContractWrite(config)
       console.log('--')
-
+      console.log(`data -- "${data}"`)
+      console.log(data)
+      console.log(`data?.hash -- "${data?.hash}"`)
+      
       console.log('-------')
       const { isLoading, isSuccess } = useWaitForTransaction({
         hash: data?.hash,
@@ -45,9 +48,13 @@ function LegendsOfKrumpComp(props:any) {
       const [mintSuccess, setMintSuccess] = useState(false);
       async function  onMintClick(){
             try{
+
                 console.log('minting clicked');
+                console.log(`writeAsync = "${writeAsync}"`)
+                console.log(`write = "${write}"`)
             const tx = await writeAsync?.();
          const res = await tx?.wait();
+         console.log(`res--"${res}"`)
          setMintSuccess(true);
         }catch(error){
                 console.error(error);

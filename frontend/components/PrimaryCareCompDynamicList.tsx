@@ -7,19 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 import { ethers} from 'ethers';
 import {legendsOfKrump_CONTRACT_ADDRESS,legendsOfKrump_CONTRACT_ABI} from '../../srcConstants.js';
 import {  createClient, configureChains, WagmiConfig, useAccount, useConnect, useEnsName, usePrepareContractWrite, useContractWrite, useWaitForTransaction  } from 'wagmi'
-//import { createStylesServer, ServerStyles } from '@mantine/ssr';
-const GridHeaders= ['Dentistry','Parasite Control (Fleas, Ticks & Heartworms)','Microchipping', 'Wellness & Preventive Care']
-const GridDesc= [
-    'Annual dental exams and cleanings are recommended to protect your pet from many health problems and help them maintain a healthy and clean mouth.',
-    'Parasites such as fleas and ticks can be very damaging to your pet’s health. Preventive measures should be taken year-round to inhibit potential outbreaks.',
-'Microchip identification is the most reliable way to reunite lost pets with their owners.',
-'Annual wellness exams evaluate your pets overall health, detect problems before they become serious, and keep them on track to live a long, healthy life.',
-''
-]
-const GridPreventiveCareImages= [ 
-    "/images/Dentistry1.PNG", 
-    "/images/Fleas1.PNG", 
-    "/images/1.PNG"]
+
+
     const mockProduct = [ { ""}]
     const [products, setProducts] = useState({
         loading:false,

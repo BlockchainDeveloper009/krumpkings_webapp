@@ -87,3 +87,30 @@ add google review link to application side bar
 
 yarn run build
 yarn run start
+cors on api side
+https://stackoverflow.com/questions/61238680/access-to-fetch-at-from-origin-http-localhost3000-has-been-blocked-by-cors
+nextjs
+https://www.hostinger.com/tutorials/err_ssl_protocol_error
+https://nextjs.org/docs/advanced-features/custom-server
+https://www.propelauth.com/post/avoiding-cors-issues-in-react-next-js
+https://nextjs.org/docs/api-reference/next.config.js/rewrites
+https://docs.alchemy.com/docs/debugging-cors-problems-for-end-users
+https://www.appsloveworld.com/reactjs/100/6/access-to-fetch-at-from-origin-http-localhost3000-has-been-blocked-by-cors-p
+https://yuksek.me/
+
+https://github.com/moyezr
+https://github.com/moyezr/ai-nft-minting-app/blob/main/client/utils/AiMintsContext.js
+https://gmx.io/#/
+https://about.kazm.xyz/
+https://blog.meetdapper.com/posts/lazy-minting-explained#:~:text=Lazy%20minting%20is%20a%20powerful,by%20the%20marketplace%20upon%20sale.
+
+https://css-tricks.com/how-to-install-npm-packages/#:~:text=If%20it%20finds%20that%20package,the%20package%20needs%20to%20run.
+
+Flow chain videos:
+https://www.twitch.tv/flow_blockchain
+https://docs.niftory.com/home/v/api/getting-started/api-quickstart
+https://www.youtube.com/watch?v=KbhiAaRdgwc
+
+
+https://www.sonarplatform.io/
+

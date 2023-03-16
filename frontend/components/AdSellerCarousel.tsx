@@ -42,16 +42,29 @@ function AdSellerCarousel() {
                         src= {AdsSellerImages[0]}
                         height={imgHeight}
                         fit="contain"
-                        alt="Norway"
+                        alt="Krump Kings"
                         />
                     </Card.Section>
                 </Card>
     </Carousel.Slide>
-    <Carousel.Slide>
+    {/* <Carousel.Slide>
     <Card shadow="sm" p="lg" radius="md" withBorder>
                     <Card.Section>
                         <Image
                         src= 'https://youtu.be/JxNqMDixFZo'
+                        height={imgHeight}
+                        fit="contain"
+                        alt="Youtube video"
+                        />
+                    </Card.Section>
+
+                </Card>
+    </Carousel.Slide> */}
+    <Carousel.Slide>
+    <Card shadow="sm" p="lg" radius="md" withBorder>
+                    <Card.Section>
+                        <Image
+                        src= {AdsSellerImages[1]}
                         height={imgHeight}
                         fit="contain"
                         alt="Norway"
@@ -59,6 +72,8 @@ function AdSellerCarousel() {
                     </Card.Section>
 
                 </Card>
+
+
     </Carousel.Slide>
     <Carousel.Slide>
     <Card shadow="sm" p="lg" radius="md" withBorder>

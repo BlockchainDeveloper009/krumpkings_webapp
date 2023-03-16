@@ -40,11 +40,7 @@ import { useAccount } from 'wagmi';
 import { ConnectButton, getDefaultWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
-import {
- 
-  legendsOfKrump_CONTRACT_ADDRESS,
-  CreateBondandAdminRole_CONTRACT_ABI,
-} from "../srcConstants";
+
 // import Cards from './Cards';
 
 // import { InjectedConnector } from 'wagmi/connectors/injected'
@@ -55,7 +51,7 @@ import {
 
 const OrganizationName = "Krump Kings"
 const Applicationfooter = `2022 all copyright resverved to ${OrganizationName}`
-function mint(){}
+
 function AppShellLinkExample() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
