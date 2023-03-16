@@ -83,7 +83,7 @@ function LegendsOfKrumpComp(props:any) {
               <Group position="apart" mt="md" mb="xs">
                   <Text weight={500}>{m.title}</Text>
            
-                  <Badge color="red" variant="dark">
+                  <Badge color="red" variant="light">
                   
                   {mintCostinWei.toString()}
                   </Badge>

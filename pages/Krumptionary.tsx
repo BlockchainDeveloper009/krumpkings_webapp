@@ -22,7 +22,7 @@ function Krumptionary() {
        
         <IpfsImage hash='ipfs://Qme8SriYgGNoXQzG1qYYZKThv3QTBf7pMJwUpu3gqaqQRH'></IpfsImage>
         <h3>Test 2 For future use</h3>
-        <IpfsImage hash='Qme8SriYgGNoXQzG1qYYZKThv3QTBf7pMJwUpu3gqaqQRH' alt='my image' className='mt-2 rounded' onClick={() => {}} />
+        <IpfsImage hash='Qme8SriYgGNoXQzG1qYYZKThv3QTBf7pMJwUpu3gqaqQRH' className='mt-2 rounded' onClick={() => {}} />
         
         </Box>
     </div>

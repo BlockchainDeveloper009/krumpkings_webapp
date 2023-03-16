@@ -87,4 +87,4 @@ function CollectionsPage() {
   );
 } 
 
-export default SurgeryServicesCompR1;
+export default CollectionsPage;

@@ -35,10 +35,10 @@ function SurgeryServicesCompR1() {
 
                     <Group position="apart" mt="md" mb="xs">
                         <Text weight={500}>{GridHeaders[0]}</Text>
-                        <Badge color="teal" variant="dark">
+                        <Badge color="teal" variant="light">
                         0.02 ETH
                         </Badge>
-                        <Badge color="pink" variant="dark">
+                        <Badge color="pink" variant="dot">
                         Minted
                         </Badge>
                     </Group>

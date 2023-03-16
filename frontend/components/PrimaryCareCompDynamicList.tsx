@@ -9,7 +9,7 @@ import {legendsOfKrump_CONTRACT_ADDRESS,legendsOfKrump_CONTRACT_ABI} from '../..
 import {  createClient, configureChains, WagmiConfig, useAccount, useConnect, useEnsName, usePrepareContractWrite, useContractWrite, useWaitForTransaction  } from 'wagmi'
 
 
-    const mockProduct = [ { ""}]
+    const mockProduct = [ { "s":"dd"}]
     const [products, setProducts] = useState({
         loading:false,
         data:null,
@@ -106,22 +106,22 @@ function PrimaryCareCompDynamicList() {
                 <Card shadow="sm" p="lg" radius="md" withBorder>
                     <Card.Section>
                         <Image
-                        src={GridPreventiveCareImages[0]}
+                        // src={GridPreventiveCareImages[0]}
                         height={160}
                         alt="Norway"
                         />
                     </Card.Section>
 
                     <Group position="apart" mt="md" mb="xs">
-                        <Text weight={500}>{GridHeaders[0]}</Text>
+                        {/* <Text weight={500}>{GridHeaders[0]}</Text> */}
                         <Badge color="pink" variant="light">
                         On Sale
                         </Badge>
                     </Group>
 
-                    <Text size="sm" color="dimmed">
+                    {/* <Text size="sm" color="dimmed">
                         {GridDesc[0]}
-                    </Text>
+                    </Text> */}
                     <Text size="sm" color="dimmed">
                        {mintCostinWei.toString()}
                     </Text>
@@ -153,21 +153,21 @@ function PrimaryCareCompDynamicList() {
                     <Card shadow="sm" p="lg" radius="md" withBorder>
                             <Card.Section>
                                 <Image
-                                src={GridPreventiveCareImages[1]}
+                                // src={GridPreventiveCareImages[1]}
                                 height={300}
                                 alt="Norway"
                                 />
                             </Card.Section>
 
                             <Group position="apart" mt="md" mb="xs">
-                                <Text weight={500}>{GridHeaders[1]}</Text>
+                                {/* <Text weight={500}>{GridHeaders[1]}</Text> */}
                                 <Badge color="pink" variant="light">
                                 On Sale
                                 </Badge>
                             </Group>
 
                             <Text size="sm" color="dimmed">
-                                {GridDesc[1]}
+                                {/* {GridDesc[1]} */}
                             </Text>
 
                             <Button variant="light" color="blue" fullWidth mt="md" radius="md"
@@ -190,14 +190,14 @@ function PrimaryCareCompDynamicList() {
                             </Card.Section>
 
                             <Group position="apart" mt="md" mb="xs">
-                                <Text weight={500}>{GridHeaders[2]}</Text>
+                                {/* <Text weight={500}>{GridHeaders[2]}</Text> */}
                                 <Badge color="pink" variant="light">
                                 On Sale
                                 </Badge>
                             </Group>
 
                             <Text size="sm" color="dimmed">
-                                {GridDesc[2]}
+                                {/* {GridDesc[2]} */}
                             </Text>
 
                             <Button variant="light" color="blue" fullWidth mt="md" radius="md"
