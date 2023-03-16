@@ -113,7 +113,7 @@ function BuyNftPage() {
       <h4>Own a part of Krump historic movies</h4>
         {/* <DiagnosticServicesSimpleGrid/> */}
         <button disabled={mintLoading} onClick={()=>wr()}>click to buy</button>
-        '{txnErr.toString()}' - error flag
+        {txnErr.toString()} - error flag
       </Box> 
         
         
