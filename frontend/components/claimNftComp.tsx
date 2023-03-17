@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ethers} from 'ethers';
 import { logToConsole, debugFlag,legendsOfKrump_CONTRACT_ADDRESS,legendsOfKrump_CONTRACT_ABI} from '../../srcConstants.js';
-import {  createClient, configureChains, WagmiConfig, useAccount, useConnect, useEnsName, usePrepareContractWrite, useContractWrite, useWaitForTransaction  } from 'wagmi'
+import {  createClient, configureChains, WagmiConfig, useAccount, useConnect, useEnsName, usePrepareContractWrite, useContractWrite, useWaitForTransaction, useContractEvent  } from 'wagmi'
 
 function claimNftComp() {
     const router = useRouter();
@@ -14,7 +14,7 @@ function claimNftComp() {
      const { address, connector, isConnected } = useAccount()
      const [MintLoading,setMintLoading] = useState(false);
      const [mintSuccess, setMintSuccess] = useState(false);
-
+    
      const to = address
     let mintCost = ethers.utils.parseEther('0.02');
     let mintCostinWei = ethers.utils.formatEther(2000000000000000).toString();
@@ -37,10 +37,41 @@ function claimNftComp() {
         //     value: ethers.utils.parseEther('0.01'),
         //   },
       });
-      const { data, write , error, isError, writeAsync, isLoading: mintLoading, } = useContractWrite(config)
+      const { data, write , error, isError, writeAsync, isLoading: mintLoading, status:stat } 
+      = useContractWrite({
+        ...config,
+        onError(error) {
+          console.log('Error', error)
+        },
+        onSettled(data, error) {
+            console.log('Settled', { data, error })
+          },
+      })
      
       const { isLoading, isSuccess } = useWaitForTransaction({
         hash: data?.hash,
+        onError(error) {
+            console.log('useWaitForTransaction-->Error', error)
+          },
+        onSuccess(data) {
+            
+            console.log('useWaitForTransaction-->Success', data);
+            console.log(`stat-- > ${stat}`)
+            router.push('/MintedSuccessfully');
+          },
+      })
+
+      useContractEvent({
+        address: legendsOfKrump_CONTRACT_ADDRESS,
+        abi: legendsOfKrump_CONTRACT_ABI,
+        eventName: 'mintSuccess',
+        listener(mintedBy, nftContractAddress, tokenId) {
+          console.log('---------------------')
+          logToConsole(debugFlag, `--- ${mintedBy}, ${nftContractAddress}, ${tokenId}`);
+        
+         
+        },
+        once: true,
       })
       if(debugFlag==1)
       {
@@ -71,10 +102,10 @@ function claimNftComp() {
                     logToConsole(debugFlag,`writeAsync = "${writeAsync}"`);
                     
                     logToConsole(debugFlag,`write = "${write}"`)
-                    const tx = await write?.();
+                    const tx = await writeAsync?.();
                     logToConsole(debugFlag,`tx== ${tx}`)
-                    // const res = await tx?.wait();
-                    // console.log(`res--"${res}"`)
+                    const res = await tx?.wait();
+                    console.log(`res--"${res}"`)
                     setMintSuccess(true);
 
 
